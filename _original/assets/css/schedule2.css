@@ -1,0 +1,249 @@
+.fa {
+  display:inline-block;
+  font:normal normal normal 14px/1 FontAwesome;
+  font-size:inherit;
+  text-rendering:auto;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.fa-clock-o:before {
+  content:"\f017";
+}
+
+.fa-map-marker:before {
+  content:"\f041";
+}
+
+.container .elemento {
+  margin:10px auto;
+  min-width:300px;
+}
+
+@media screen and (max-width: 480px) {
+  .container .elemento {
+    min-width:300px;
+    height:300px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .container .elemento {
+    width:680px;
+  }
+}
+
+ul {
+  padding:0;
+  list-style:none;
+}
+
+.calendario {
+  width:100%;
+  padding:10px;
+}
+
+.calendario .cal-header {
+  margin:5px 5px 10px;
+  font-family:'Lato', 'Open Sans', sans-serif;
+  font-weight:bold;
+  font-size:1.3em;
+  text-transform:uppercase;
+}
+
+.calendario .cal-row {
+  /*border-top:1px #002b7f solid;*/
+  /*border-right:1px lightgrey solid;*/
+  position:relative;
+  display:block;
+  height:75px;
+  color:black;
+  transition:all ease 0.9s;
+  border:2px #002b7f solid;
+}
+
+.calendario .cal-row:last-child {
+  border-bottom:2px #002b7f solid;
+}
+
+@media screen and (min-width: 800px) {
+  .calendario .cal-row {
+    height:175px;
+    color:black;
+    background-color:white;
+    transition:all ease 0.5s;
+    margin-bottom:10px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .calendario .cal-row:hover .badge {
+    width:100%;
+  }
+}
+
+.calendario .cal-row:hover .date, .calendario .cal-row:hover .info, .calendario .cal-row:hover .info-title, .calendario .cal-row:hover .info a {
+  color:#f8f8ff;
+}
+
+.calendario .cal-row .badge {
+  display:block;
+  position:absolute;
+  z-index:-1;
+  top:0;
+  bottom:0;
+  margin:0 0 0 0px;
+  transition:0.9s ease-in-out;
+  width:5px;
+  background-color:#e29f25;
+}
+
+@media screen and (min-width: 800px) {
+  .calendario .cal-row .badge {
+    width:140px;
+    height:70px;
+    top:70px;
+    left:-20px;
+    z-index:0;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .calendario .cal-row .badge::after {
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-20px;
+    width:0;
+    height:0;
+    border-left:20px solid transparent;
+    border-top:20px solid #ab7718;
+    clear:both;
+  }
+}
+
+.calendario .cal-row .rosso {
+  background-color:#dd3333;
+}
+
+.calendario .cal-row .rosso:after {
+  border-top:20px solid #782f2f;
+}
+
+.calendario .cal-row .blu {
+  background-color:#3333dd;
+}
+
+.calendario .cal-row .blu:after {
+  border-top:20px solid #2a2a48;
+}
+
+.calendario .cal-row .date, .calendario .cal-row .info {
+  display:inline-block;
+  vertical-align:top;
+  transition:all ease 0.9s;
+}
+
+.calendario .cal-row .date {
+  width:15%;
+  margin:0 10px 0 10px;
+  font-family:'Lato', 'Open Sans', sans-serif;
+  text-align:center;
+}
+
+@media screen and (min-width: 800px) {
+  .calendario .cal-row .date {
+    position:absolute;
+    left:-20px;
+    margin-top:75px;
+    width:auto;
+    height:70px;
+    color:white;
+  }
+}
+
+.calendario .cal-row .date .month {
+  text-transform:uppercase;
+  line-height:0.5;
+  margin-top:10px;
+}
+
+.calendario .cal-row .date .day {
+  font-size:1.2em;
+  font-weight:bold;
+}
+
+@media screen and (min-width: 800px) {
+  .calendario .cal-row .date .day {
+    font-size:2em;
+  }
+}
+
+.calendario .cal-row .info {
+  text-align:left;
+}
+
+@media screen and (min-width: 800px) {
+  .calendario .cal-row .info {
+    margin:10px;
+    width:96%;
+  }
+}
+
+.calendario .cal-row .info a {
+  color:black;
+  text-decoration:none;
+  transition:all ease 0.9s;
+}
+
+.calendario .cal-row .info a:hover {
+  text-decoration:underline;
+}
+
+@media screen and (min-width: 800px) {
+  .calendario .cal-row .info a {
+    color:black;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .calendario .cal-row .info .info-title {
+    font-size:1.8em;
+  }
+}
+
+.calendario .cal-row .info .info-time, .calendario .cal-row .info .info-loc {
+  font-size:.8em;
+}
+
+@media screen and (min-width: 800px) {
+  .calendario .cal-row .info .info-time, .calendario .cal-row .info .info-loc {
+    font-size:1em;
+    margin-left:140px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .calendario .cal-row .info .info-time {
+    margin-top:30px;
+  }
+}
+
+.calendario .cal-row .info .info-pic {
+  position:absolute;
+  top:0;
+  right:0;
+  max-height:175px;
+  overflow:hidden;
+}
+
+@media screen and (max-width: 800px) {
+  .calendario .cal-row .info .info-pic {
+    display:none;
+  }
+}
+
+.day {
+  color:white;
+}
+

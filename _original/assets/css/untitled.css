@@ -1,0 +1,16 @@
+#accordion-1 {
+  width:100%;
+}
+
+.card {
+  width:93%;
+}
+
+.article-comment {
+    border-bottom-style: solid;
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+}
+.article-so {
+    padding-top: 20px;
+}

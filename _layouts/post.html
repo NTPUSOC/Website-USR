@@ -1,0 +1,90 @@
+---
+layout: default
+---
+
+<!-- Line social plugin -->
+<script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+
+<!--messeage us plugin-->
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/zh_TW/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+    <main class="page" style="background-color:rgb(246,246,246);">
+        <div class="container clean-block clean-post dark" style="padding-top:26px;">
+            <div class="row" data-sticky_parent="" style="position: relative;">
+                <div class="col-lg-8 col-xl-9" style="width:639.984px;padding:0px 15px;">
+                    <div class="post-body" style="padding-top:44px;padding-bottom:30;padding-left:33px;padding-right:33px;background-color:white;">
+                        <h3 id="news-title"><strong>{{ page.subtitle }}</strong></h3>
+                        <div id="post-info" class="post-info" style="padding-left:20px; font-size: 17px;"><span>{{ page.publisher }}</span><span>{{ page.date }}</span></div>
+
+                        
+                        <!--         圖片旋轉木馬              -->
+                        
+                        <div class="carousel slide" data-ride="carousel" id="carousel-1">
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active"><img class="w-100 d-block" src="{{ page.firstImg }}" alt="Slide Image"></div>
+                                
+                            </div>
+                            <div>
+                                <a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev"><span class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carousel-1"
+                                    role="button" data-slide="next"><span class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a>
+                            </div>
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-1" data-slide-to="1"></li>
+                                <li data-target="#carousel-1" data-slide-to="2"></li>
+                                <li data-target="#carousel-1" data-slide-to="3"></li>
+                            </ol>
+                        </div>
+                        
+                        <!--           文章內容                      -->
+                        
+                        <article class="article-comment" style="margin-top:17px; font-size: 17px;">
+                            {{ page.subtitle }}
+                            <br><br>
+                            {{ content }}
+                            <br>
+                        </article>
+                   
+
+                               
+                        <!--     sidebar           -->
+                
+                        <div class="col-lg-4 col-xl-3 side-bar sidebar--right u-md-down-margin-t-40 d-none d-lg-block">
+                    
+                            <div class="side-bar__inner">
+                        
+                                <div class="widget widget--title-box img-banner" style="padding-bottom:0px;margin-top:0px;margin-bottom:24px;">
+                            
+                                    <figure class="figure u-padding-t-20"><a href="#"><img class="img-fluid" src="../assets/img/北大社科院logo-small.jpg"></a></figure>
+                        
+                                </div>
+                        
+                                <div class="widget widget--title-box" style="margin:0px;padding:0px 20px;">               <div class="widget__title">         
+                                        <h4>追蹤我們</h4>             
+                                    </div>
+                                </div>
+                                <div class="fb-page" data-href="https://www.facebook.com/NTPUSOCUSR/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                                    <blockquote cite="https://www.facebook.com/NTPUSOCUSR/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/NTPUSOCUSR/">國立臺北大學社科院在地實踐計劃</a></blockquote>
+                                </div>
+                        
+                        
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </main>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/footer_updating.js"></script>
+    <script src="../assets/js/mapmodal.js"></script>

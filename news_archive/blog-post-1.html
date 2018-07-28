@@ -1,16 +1,24 @@
+---
+title: 台北大學社會實踐
+subtitle: 「中嘉新聞」趙培培副總訪社科院合推老人服務
+description: "北大社科院USR「社區拜會」的回顧"
+thumbnail: "https://i.imgur.com/GKgzQWC.jpg"
+publisher: 社科院
+date: 2018-07-13
+---
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="台北大學社會實踐">
+    <meta name="title" content={{ page.title }}>
     <!--Social plugin meta-->
-    <meta property="og:title"         content="北大社科院USR「社區拜會」的回顧" />
-    <meta property="og:description"   content="北大社科院USR「社區拜會」的回顧" />
-    <meta property="og:image"         content="https://i.imgur.com/GKgzQWC.jpg" />
+    <meta property="og:title"         content={{ page.title }} />
+    <meta property="og:description"   content={{ page.description }} />
+    <meta property="og:image"         content={{ page.thumbnail }} />
 
-    <title>台北大學社會實踐</title>
+    <title>{{ page.title }}</title>
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
@@ -35,16 +43,6 @@
 </head>
 
 <body>
-  <!--Facebook social plugin-->
-  <div id="fb-root"></div>
-<script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0';
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
  <!-- Line social plugin -->
 <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
 
@@ -80,8 +78,8 @@ fjs.parentNode.insertBefore(js, fjs);
             <div class="row" data-sticky_parent="" style="position: relative;">
                 <div class="col-lg-8 col-xl-9" style="width:639.984px;padding:0px 15px;">
                     <div class="post-body" style="padding-top:44px;padding-bottom:30;padding-left:33px;padding-right:33px;background-color:white;">
-                        <h3 id="news-title"><strong>「中嘉新聞」趙培培副總訪社科院合推老人服務</strong></h3>
-                        <div id="post-info" class="post-info" style="padding-left:20px; font-size: 17px;"><span>社科院</span><span>2018-07-13</span></div>
+                        <h3 id="news-title"><strong>{{ page.subtitle }}</strong></h3>
+                        <div id="post-info" class="post-info" style="padding-left:20px; font-size: 17px;"><span>{{ page.publisher }}</span><span>{{ page.date }}</span></div>
 
 
                         <!-- 社群外掛 -->
@@ -169,7 +167,7 @@ fjs.parentNode.insertBefore(js, fjs);
                             <div class="fb-save" data-uri="https://tpemartin.github.io/Website-USR/news_archive/blog-post-1.html" data-size="small"></div>
                         </div>
                         
-                        <article class="article-comment" style="margin-top:17px; font-size: 17px;">「中嘉新聞」趙培培副總訪社科院合推老人服務<br>
+                        <article class="article-comment" style="margin-top:17px; font-size: 17px;">{{ page.subtitle }}<br>
 <br>
 國內有線電視品牌公司「中嘉新聞」，於6月27日(週三)下午三時，由趙培培資深副總經理偕呂奇坤副理等共三人，連袂拜訪本校社會科學學院，由曾敏傑院長接待，並且介紹執行中的大學社會責任(USR)計畫。雙方就未來老人服務的議題深入交換意見，並且商定未來持續在老人服務方面進行合作與交流。<br>
 <br>

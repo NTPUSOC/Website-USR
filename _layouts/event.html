@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+{% comment %} activeclass = ""表示「近期活動」tab不會選，= "active" 表示會選 {% endcomment %}
+{% assign activeclass = "" %}
+
 <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
 
 <!--messeage us plugin-->
@@ -22,9 +25,8 @@ layout: default
                 <div class="col" style="position:relative;height:auto;">
 
                     {% include socialplugin.html %}
-                    
                     {% include eventlistingtab.html %}
-                    
+
                     <div class="posts-box2 u-padding-b-0" style="height:auto;margin-bottom:-29px;padding-bottom:9px;background-color:white;">
                         <div class="row" style="margin-left:-9px;margin-bottom:28px;">
                             <div class="col-12 col-md-5" style="width:auto;margin-left:10px;margin-top:26px;min-width:10%;padding-bottom:12px;padding-right:37px;"><span class="d-inline d-sm-none d-md-none" style="border-style:hidden hidden solid;border-color:tomato;border-width:thin;margin-left:20px;padding-bottom:11.2px;font-size:18px;color:rgb(102,137,204);height:0px;margin-right:-5px;">近期活動</span>
@@ -39,23 +41,23 @@ layout: default
                                         <div class="p-2 flex-fill bd-highlight" style="margin-bottom:-16px;margin-top:2px;"><a href="#" class="event clearfix" style="margin-bottom:0px;"></a>
                                             <div class="info-loc" style="margin-bottom:4px;">
                                                 <i class="fa fa-map-marker" style="margin-right:1em;" type="button" data-toggle="modal" data-target="#event1-location"></i><span class="d-sm-inline-flex">{{ page.location }}</span>
-                                                
+
                                                 {% include mapmodal_1.html %}
                                             </div>
                                             <div class="info-time" style="margin-bottom:4px;"><i class="fa fa-clock-o" style="margin-right:0.8em;"></i><span>16:00-17:00</span></div>
                                             <div class="info-time"><i class="fa fa-check-square-o" style="margin-right:0.8em;"></i><span>線上報名</span></div>
-                                            
-                                           
-                                           
-                                        
+
+
+
+
 <!--
-                                               
+
                                                 <div class="fb-share-button" data-href="https://tpemartin.github.io/Website-USR/events_archive/event1.html" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftpemartin.github.io%2FWebsite-USR%2Fevents_archive%2Fevent1.html&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">分享</a>
                                                 </div>
 -->
-                                                
+
                                             <!--           Line it sharing button          -->
-                                                
+
                                                 <!--<div class="line-it-button" data-lang="zh_Hant" data-type="share-b" data-url="https://tpemartin.github.io/Website-USR/events_archive/event1.html" style="display: none; margin:auto;"></div>-->
                                         </div>
                                     </div>
@@ -70,21 +72,21 @@ layout: default
 </div>
                     </div>
                 </div>
-            
+
                 </div>
-            
+
                 <div class="col-lg-3 d-none d-sm-none d-md-none d-lg-block">
                     {% include eventsidebar.html %}
                 </div>
-                
+
             </div>
         </div>
-        
+
                <!--       facebook message us plugin             -->
                     <!-- Your customer chat code -->
-      <!--              
+      <!--
         <div class="fb-customerchat" attribution=setup_tool page_id="591557164528575" theme_color="#172430" logged_in_greeting="您好！歡迎您與我們聯繫＝）" logged_out_greeting="您好！歡迎您與我們聯繫＝）">
-                    
+
         </div>
 -->
     </main>

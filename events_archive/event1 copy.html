@@ -42,11 +42,8 @@
 
                     {% include socialplugin.html %}
                     
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item"><a class="nav-link" href="../events.html" style="height:49px;margin-top:3px;color:rgb(73,80,87);">近期活動</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../forthcomingevents.html" style="color:rgb(73,80,87);height:52px;">活動列表<div class="d-inline"><span class="badge badge-primary badge-article-number">5</span></div></a></li>
-                        <li class="nav-item"><a class="nav-link" href="../jobs.html" style="height:49px;color:rgb(73,80,87);">徵才<span class="badge badge-primary badge-article-number">0</span></a></li>
-                    </ul>
+                    {% include eventlistingtab.html %}
+                    
                     <div class="posts-box2 u-padding-b-0" style="height:auto;margin-bottom:-29px;padding-bottom:9px;background-color:white;">
                         <div class="row" style="margin-left:-9px;margin-bottom:28px;">
                             <div class="col-12 col-md-5" style="width:auto;margin-left:10px;margin-top:26px;min-width:10%;padding-bottom:12px;padding-right:37px;"><span class="d-inline d-sm-none d-md-none" style="border-style:hidden hidden solid;border-color:tomato;border-width:thin;margin-left:20px;padding-bottom:11.2px;font-size:18px;color:rgb(102,137,204);height:0px;margin-right:-5px;">近期活動</span>

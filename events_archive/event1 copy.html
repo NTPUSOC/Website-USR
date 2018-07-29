@@ -78,12 +78,12 @@
                                                 <!--<div class="line-it-button" data-lang="zh_Hant" data-type="share-b" data-url="https://tpemartin.github.io/Website-USR/events_archive/event1.html" style="display: none; margin:auto;"></div>-->
                                         </div>
                                     </div>
-                            </div><img class="img-fluid" src="{{ page.image }}" style="width:315px;margin-top:13px;margin-left:17px;"></div>
+                            </div><img class="img-fluid" src="{{ page.thumbnailimage }}" style="width:315px;margin-top:13px;margin-left:17px;"></div>
                         <div class="col-12 col-md-6" style="padding-left:38px;overflow:auto;height:620px;padding-top:0px;margin-top:27px;padding-right:20px;margin-left:-6px;max-width:auto;"><article>
 {{ content }}
-<img border="5" src="https://i.imgur.com/CGZl3w8.jpg" width="450" height="650"><p></p><br>
-<img border="5" src="https://i.imgur.com/4LtSVJY.jpg" width="650" height="450"><p></p><br>
-<img border="5" src="https://i.imgur.com/I9XPKT8.jpg" width="650" height="450"><p></p> 
+                            {% for item in page.otherImage %}
+<img border="5" src="{{ item.src }}" width="450" height="650"><p></p><br>
+                            {% endfor %}
 </article>
 
 </div>

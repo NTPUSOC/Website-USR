@@ -16,7 +16,7 @@ layout: default
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-
+{% include nav.html %}
     <main class="page" style="background-color:rgb(246,246,246);">
         <div class="container clean-block clean-post dark" style="padding-top:26px;">
             <div class="row" data-sticky_parent="" style="position: relative;">
@@ -26,9 +26,9 @@ layout: default
                         <div id="post-info" class="post-info" style="padding-left:20px; font-size: 17px;"><span>{{ page.publisher }}</span><span>{{ page.date }}</span></div>
 
                          {% include socialplugin.html %}
-                        
+
                         <!--         圖片旋轉木馬              -->
-                        
+
                         <div class="carousel slide" data-ride="carousel" id="carousel-1">
                             <div class="carousel-inner" role="listbox">
                                 <div class="carousel-item active"><img class="w-100 d-block" src="{{ page.firstImg }}" alt="Slide Image"></div>
@@ -47,22 +47,22 @@ layout: default
                                 {% endfor %}
                             </ol>
                         </div>
-                        
+
                         <!--           文章內容                      -->
                         {% include articlelikeshare.html %}
-                        
+
                         <article class="article-comment" style="margin-top:17px; font-size: 17px;">
                             {{ page.subtitle }}
                             <br><br>
                             {{ content }}
                             <br>
                         </article>
-                   
+
 
                         {% include fbcomment.html %}
-                        
+
                         <!--     sidebar           -->
-                
+
                         <div class="col-lg-4 col-xl-3 side-bar sidebar--right u-md-down-margin-t-40 d-none d-lg-block">
                     
                             <div class="side-bar__inner">

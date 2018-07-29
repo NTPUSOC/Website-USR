@@ -66,19 +66,8 @@ location: 臺北大學圖書館 B1 多功能教室
                                         <div class="p-2 flex-fill bd-highlight" style="margin-bottom:-16px;margin-top:2px;"><a href="#" class="event clearfix" style="margin-bottom:0px;"></a>
                                             <div class="info-loc" style="margin-bottom:4px;">
                                                 <i class="fa fa-map-marker" style="margin-right:1em;" type="button" data-toggle="modal" data-target="#event1-location"></i><span class="d-sm-inline-flex">{{ page.location }}</span>
-                                                <div class="modal fade" role="dialog"
-                                                    tabindex="-1" id="event1-location">
-                                                    <div class="modal-dialog" role="document">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header align-items-center" style="height:35px;">
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                            </div>
-                                                            <div class="modal-body embed-responsive embed-responsive-16by9" style="padding:0px;">
-                                                                <iframe class="embed-responsive-item" width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=121.36896956129932%2C24.942811134455884%2C121.37122261687183%2C24.944574348764405&amp;layer=mapnik&amp;marker=24.943692744764835%2C121.37009608908556" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=24.94369&amp;mlon=121.37010#map=19/24.94369/121.37010&amp;layers=NG">放大地圖</a></small>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                
+                                                {% include mapmodal_1.html %}
                                             </div>
                                             <div class="info-time" style="margin-bottom:4px;"><i class="fa fa-clock-o" style="margin-right:0.8em;"></i><span>16:00-17:00</span></div>
                                             <div class="info-time"><i class="fa fa-check-square-o" style="margin-right:0.8em;"></i><span>線上報名</span></div>
@@ -237,23 +226,9 @@ location: 臺北大學圖書館 B1 多功能教室
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
- </footer>	<div class="modal fade" id="myModal">
-		<div class="modal-dialog">
-			<div class="modal-content bmd-modalContent">
-
-				<div class="modal-body">
-          
-          <div class="close-button">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          </div>
-          <div class="embed-responsive embed-responsive-16by9">
-					            <iframe class="embed-responsive-item" frameborder="0"></iframe>
-          </div>
-				</div>
-
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
+ </footer>	
+    
+{% include mapmodal_2.html %}
  
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>

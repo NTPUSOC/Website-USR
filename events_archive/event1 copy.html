@@ -1,3 +1,11 @@
+---
+layout: event
+title: USR「魔幻音樂節」
+month: 七月
+day: 18
+location: 臺北大學圖書館 B1 多功能教室
+---
+
 <!DOCTYPE html>
 <html>
 
@@ -50,19 +58,24 @@
                                 <div
                                     class="card flex-row flex-wrap" style="margin-left:17px;margin-right:0px;max-width:100%;">
                                     <div class="card-block px-2 calendar" style="min-width:80px;background-color:white;height:80px;margin-bottom:-6px;padding-bottom:-30px;margin-top:19px;">
-                                        <p class="event_month" style="width:54px;height:26px;font-size:14px;">七月</p>
-                                        <p class="event_day" style="width:54px;">18</p>
+                                        <p class="event_month" style="width:54px;height:26px;font-size:14px;">{{ page.month }}</p>
+                                        <p class="event_day" style="width:54px;">{{ page.day}}</p>
                                     </div>
-                                    <h4 class="flex-sm-shrink-0 event_title" style="margin-top:34px;margin-left:10px;margin-bottom:-1px;"><strong>USR「魔幻音樂節」</strong></h4>
+                                    <h4 class="flex-sm-shrink-0 event_title" style="margin-top:34px;margin-left:10px;margin-bottom:-1px;"><strong>{{ page.title }}</strong></h4>
                                     <div class="card-body card-block px-2" style="max-width:300px;padding-top:2px;">
                                         <div class="p-2 flex-fill bd-highlight" style="margin-bottom:-16px;margin-top:2px;"><a href="#" class="event clearfix" style="margin-bottom:0px;"></a>
-                                            <div class="info-loc" style="margin-bottom:4px;"><i class="fa fa-map-marker" style="margin-right:1em;" type="button" data-toggle="modal" data-target="#event1-location"></i><span class="d-sm-inline-flex">臺北大學圖書館 B1 多功能教室</span>
+                                            <div class="info-loc" style="margin-bottom:4px;">
+                                                <i class="fa fa-map-marker" style="margin-right:1em;" type="button" data-toggle="modal" data-target="#event1-location"></i><span class="d-sm-inline-flex">{{ page.location }}</span>
                                                 <div class="modal fade" role="dialog"
                                                     tabindex="-1" id="event1-location">
                                                     <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
-                                                            <div class="modal-header align-items-center" style="height:35px;"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                                                            <div class="modal-body embed-responsive embed-responsive-16by9" style="padding:0px;"><iframe class="embed-responsive-item" width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=121.36896956129932%2C24.942811134455884%2C121.37122261687183%2C24.944574348764405&amp;layer=mapnik&amp;marker=24.943692744764835%2C121.37009608908556" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=24.94369&amp;mlon=121.37010#map=19/24.94369/121.37010&amp;layers=NG">放大地圖</a></small></div>
+                                                            <div class="modal-header align-items-center" style="height:35px;">
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                            </div>
+                                                            <div class="modal-body embed-responsive embed-responsive-16by9" style="padding:0px;">
+                                                                <iframe class="embed-responsive-item" width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=121.36896956129932%2C24.942811134455884%2C121.37122261687183%2C24.944574348764405&amp;layer=mapnik&amp;marker=24.943692744764835%2C121.37009608908556" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=24.94369&amp;mlon=121.37010#map=19/24.94369/121.37010&amp;layers=NG">放大地圖</a></small>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>

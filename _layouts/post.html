@@ -23,7 +23,7 @@ layout: default
                 <div class="col-lg-8 col-xl-9" style="width:639.984px;padding:0px 15px;">
                     <div class="post-body" style="padding-top:44px;padding-bottom:30;padding-left:33px;padding-right:33px;background-color:white;">
                         <h3 id="news-title"><strong>{{ page.subtitle }}</strong></h3>
-                        <div id="post-info" class="post-info" style="padding-left:20px; font-size: 17px;"><span>{{ page.publisher }}</span><span>{{ page.date }}</span></div>
+                        <div id="post-info" class="post-info" style="padding-left:20px; font-size: 17px;"><span>{{ page.publisher }}</span><span>{{ page.date | date: "%Y-%m-%d" }}</span></div>
 
                          {% include socialplugin.html %}
 

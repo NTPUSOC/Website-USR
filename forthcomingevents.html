@@ -41,11 +41,15 @@ permalink: forthcomingevents.html
                         <div class="row" style="margin-left:1%;margin-bottom:0px;margin-right:1%;">
                             <div class="col-12 col-sm-auto col-md-auto mx-auto" style="width:100%;margin-left:10px;margin-top:26px;min-width:none;padding-bottom:12px;padding-right:0px;min-height:none;">
                                 <div role="tablist" id="accordion-1" style="/*width:auto;*//*max-width:auto;*/margin-left:10px;">
+
 {% for item in site.events %}
+  {% capture _ %}{% increment _myCount %}{% endcapture %}
+  {% assign itemNumber = _myCount | plus: 1 %}
+  <!--{% assign itemNumber = _myCount | plus:1 %}-->
       <div class="card">
           <div class="card-header" role="tab" style="padding-bottom:0;min-height:109px;">
               <h5 class="mb-0" style="height:128px;margin-top:-20px;">
-                <a data-toggle="collapse" aria-expanded="true" aria-controls="accordion-1 .item-1" href="div#accordion-1 .item-1"><br>
+                <a data-toggle="collapse" aria-expanded="true" aria-controls="accordion-1 .item-{{ itemNumber }}" href="div#accordion-1 .item-{{ itemNumber }}"><br>
                   <div>
                     <div class="d-table-cell">
                       <p style="width:54px;height:26px;font-size:14px;margin-top:11px;/*.event_month {&nbsp; padding:0.1em;*/margin-bottom:0.15em;background:#C00000;font-size:0.75em;color:white;border-top-left-radius:0.3em;border-top-right-radius:0.3em;text-align:center;">{{ item.month }}</p>
@@ -63,7 +67,13 @@ permalink: forthcomingevents.html
                 </a>
               </h5>
             </div>
-            <div class="collapse show item-1" role="tabpanel" data-parent="#accordion-1">
+        {% if itemNumber <= 2 %}
+
+
+            <div class="collapse show item-{{ itemNumber }}" role="tabpanel" data-parent="#accordion-1">
+        {% else %}
+            <div class="collapse item-{{ itemNumber }}" role="tabpanel" data-parent="#accordion-1">
+        {% endif %}
                 <div class="card-body">
                     <p class="card-text">{{ item.description }}<a href="{{ item.url }}">...點我看詳細內容</a>
                     </p>

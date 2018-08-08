@@ -1,0 +1,99 @@
+---
+layout: default
+title: 活動列表
+permalink: news.html
+---
+
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/zh_TW/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<nav class="navbar navbar-light navbar-expand-md navigation-clean" style="box-shadow: 0px 0px 8px 1px #929292">
+    <div class="container"><a class="navbar-brand" href="index.html" style="font-size:24px;">社會責任實踐平台</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div
+            class="collapse navbar-collapse" id="navcol-2">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">首頁</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link active" href="news.html">精彩花絮</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="events.html">活動/徵才</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="institutes.html">相關機構</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="https://www.facebook.com/usr.ntpu" target="_blank" style="font-size:24px;height:40px;margin-top:-6px;"><i class="icon ion-social-facebook"></i></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="mailto:usrsocntpu@gm.ntpu.edu.tw" target="_blank" style="font-size:24px;height:40px;margin-top:-6px;"><i class="icon ion-ios-email-outline"></i></a></li>
+            </ul>
+    </div>
+    </div>
+</nav>
+    <main class="page" style="background-color:rgb(246,246,246);">
+        <div class="container clean-block clean-post dark" style="padding-top:26px;">
+            <div class="row" data-sticky_parent="" style="position: relative;">
+                <div class="col-lg-8 col-xl-9 content-wrapper" style="position: relative;">
+                    <ul class="nav nav-tabs" style="margin-left:0px;">
+                        <li class="nav-item"><a class="nav-link active" href="#" style="height:53px;margin-top:3px;color:rgb(73,80,87);">近期消息</a></li>
+                        <li class="nav-item"><a class="nav-link" href="news-archive.html" style="color:rgb(73,80,87);height:53px;margin-top:3px;">精彩回顧</a></li>
+                    </ul>
+                    <div data-sticky_column="" style="background-color:white;">
+                        <div class="posts-box2 u-padding-b-0">
+                            <div class="posts-box2__top">
+                                <h3><span>最新消息</span></h3>
+                            </div>
+
+                            {% assign firstpage = site.news.last %}
+
+                            <div class="posts-list-big-first row">
+                                <a href="{{ firstpage.url }}">
+                                    <div id="flex-newpost" class="d-flex flex-wrap flex-md-nowrap bd-highlight" style="padding-right:15px;padding-left:15px;">
+                                        <div class="p-2 flex-fill bd-highligh"><img src="{{ firstpage.thumbnail }}"></div>
+                                        <div class="p-2 flex-fill bd-highligh">
+                                            <h5 style="margin-bottom:11px;"><strong>{{ firstpage.subtitle }}</strong><br></h5>
+                                            <p style="margin-bottom:5px;">{{ firstpage.description }}</p><span style="padding-left:3px;">{{ firstpage.date | date: "%Y-%m-%d" }}</span><span class="post-words">&nbsp; 更多內容...</span></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="posts-box2 u-padding-b-0">
+                            <div class="posts-box2__top">
+                                <h3><span>近期新聞</span></h3>
+                            </div>
+                            <div class="posts-list-big-first row">
+                              {% for item in site.news %}
+                                {% capture _ %}{% increment _myCount %}{% endcapture %}
+                                {% assign itemNumber = _myCount | plus: 1 %}
+
+                                <article class="col-sm-6 col-xl-4">
+                                    <div class="post-item">
+                                        <figure class="figure"><a href="{{ item.url }}"><img class="img-fluid" src="{{ item.firstImg }}"></a></figure>
+                                        <div class="post-content">
+                                            <div class="post-meta">
+                                                <p class="post-time">{{ item.date | date: "%Y-%m-%d" }}<a href="{{ item.url }}"><span class="badge badge-primary badge-label">{{ item.tag }}</span></a></p>
+                                            </div>
+                                            <h5><a href="{{ item.url }}"><strong>{{ item.subtitle }}</strong><br></a></h5>
+                                            <p class="post-excerpt">{{ item.description }}...<br></p>
+                                        </div>
+                                    </div>
+                                </article>
+
+                              {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-3 side-bar sidebar--right u-md-down-margin-t-40 d-none d-lg-block">
+                    <div class="side-bar__inner">
+{% include basicsidebar.html %}
+{% include tagscloud.html %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--
+            <!--       facebook message us plugin             -->
+                    <!-- Your customer chat code -->
+                    <div class="fb-customerchat" attribution=setup_tool page_id="591557164528575" theme_color="#172430" logged_in_greeting="您好！歡迎您與我們聯繫＝）" logged_out_greeting="您好！歡迎您與我們聯繫＝）">
+                    </div>
+    </main>

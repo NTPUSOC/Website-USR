@@ -1,38 +1,8 @@
 ---
+layout: default
+title: 台北大學社會實踐
+permalink: index.html
 ---
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="台北大學社會實踐">
-    <title>台北大學社會實踐</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
-    <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
-    <link rel="stylesheet" href="assets/css/Article-Clean.css">
-    <link rel="stylesheet" href="assets/css/calendar.css">
-    <link rel="stylesheet" href="assets/css/dropdown_menu.css">
-    <link rel="stylesheet" href="assets/css/flexible-jekyll.css">
-    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
-    <link rel="stylesheet" href="assets/css/mapmodal.css">
-    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
-    <link rel="stylesheet" href="assets/css/newstoday.css">
-    <link rel="stylesheet" href="assets/css/schedule.css">
-    <link rel="stylesheet" href="assets/css/schedule2.css">
-    <link rel="stylesheet" href="assets/css/Social-Icons.css">
-    <link rel="stylesheet" href="assets/css/Tag-cloud.css">
-    <link rel="stylesheet" href="assets/css/untitled.css">
-</head>
-
-<body>
-
-<!--messeage us plugin-->
-<!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -62,14 +32,15 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <a href="news_archive/blog-post-1.html">
+                      {% assign firstpage = site.posts.first %}
+                        <a href="{{ firstpage.url }}">
                             <article>
                                 <div class="post-item">
-                                    <figure class="figure"><img class="img-fluid figure-img" src="https://i.imgur.com/GKgzQWC.jpg"></figure>
+                                    <figure class="figure"><img class="img-fluid figure-img" src="{{ firstpage.thumbnail }}"></figure>
                                     <div class="post-content">
                                         <div class="post-meta"></div>
-                                        <h5 style="margin-top:11px;margin-bottom:4px;"><span style="padding-left:3px;">2018-06-28</span><span style="padding-left:3px;"><strong>「中嘉新聞」趙培培副總訪社科院合推老人服務</strong></span></h5>
-                                        <p class="post-excerpt">國內有線電視品牌公司「中嘉新聞」，於6月27日(週三)下午三時，由趙培培資深副總經理偕呂奇坤副理等共三人，連袂拜訪本校社會科學學院，由曾敏傑院長接待，並且介紹執行中的大學社會責任(USR)計畫。雙方就未來老人服務的議題深入交換意見，並且商定未來持續在老人服務方面進行合作與交流。...</p>
+                                        <h5 style="margin-top:11px;margin-bottom:4px;"><span style="padding-left:3px;">{{ firstpage.date | date: "%Y-%m-%d" }}</span><span style="padding-left:3px;"><strong>{{ firstpage.subtitle }}</strong></span></h5>
+                                        <p class="post-excerpt">{{ firstpage.excerpt }}</p>
                                     </div>
                                 </div>
                             </article>
@@ -91,131 +62,35 @@
                             </ol>
                         </div>
                     </div>
+
+                    <!--近期活動-->
                     <div class="col">
                         <div role="tablist" id="accordion-1" style="overflow-y:scroll;margin-left:10px;max-height:500px;">
+                          {% for item in site.events %}
+                            {% capture _ %}{% increment _myCount %}{% endcapture %}
+                            {% assign itemNumber = _myCount | plus: 1 %}
                             <div class="card">
                                 <div class="card-header" role="tab" style="padding-bottom:0;min-height:109px;">
-                                    <h5 class="mb-0" style="height:128px;margin-top:-20px;"><a data-toggle="collapse" aria-expanded="false" aria-controls="accordion-1 .item-1" href="div#accordion-1 .item-1"><br><div><div class="d-table-cell"><p style="width:54px;height:26px;font-size:14px;margin-top:11px;/*.event_month {&nbsp; padding:0.1em;*/margin-bottom:0.15em;background:#C00000;font-size:0.75em;color:white;border-top-left-radius:0.3em;border-top-right-radius:0.3em;text-align:center;">七月</p><p style="width:54px;margin-bottom:0px;border:1px solid #999;background:white;color:black;font-size:1.25em;font-weight:bold;border-bottom-left-radius:0.1em;border-bottom-right-radius:0.1em;text-align:center;">18</p></div><div class="d-table-cell" style="padding-bottom:0px;"><h4 style="padding-left:15px;"><strong>USR「魔幻音樂節」</strong></h4><p style="height:0;font-size:18px;padding-left:15px;"><i class="fa fa-clock-o" style="margin-right:0.8em;"></i>16:00-17:00</p></div></div></a></h5>
+                                    <h5 class="mb-0" style="height:128px;margin-top:-20px;"><a data-toggle="collapse" aria-expanded="false" aria-controls="accordion-1 .item-{{ itemNumber }}" href="div#accordion-1 .item-{{ itemNumber }}"><br><div><div class="d-table-cell"><p style="width:54px;height:26px;font-size:14px;margin-top:11px;/*.event_month {&nbsp; padding:0.1em;*/margin-bottom:0.15em;background:#C00000;font-size:0.75em;color:white;border-top-left-radius:0.3em;border-top-right-radius:0.3em;text-align:center;">{{ item.day }}</p>
+                                      <p style="width:54px;margin-bottom:0px;border:1px solid #999;background:white;color:black;font-size:1.25em;font-weight:bold;border-bottom-left-radius:0.1em;border-bottom-right-radius:0.1em;text-align:center;">{{ item.month }}</p></div><div class="d-table-cell" style="padding-bottom:0px;"><h4 style="padding-left:15px;"><strong>{{ item.title }}</strong></h4><p style="height:0;font-size:18px;padding-left:15px;"><i class="fa fa-clock-o" style="margin-right:0.8em;"></i>{{ item.time }}</p></div></div></a></h5>
                                 </div>
-                                <div class="collapse item-1" role="tabpanel" data-parent="#accordion-1">
+
+                                <div class="collapse item-{{ itemNumber }}" role="tabpanel" data-parent="#accordion-1">
                                     <div class="card-body">
-                                        <p class="card-text">「巧樂團」演出，屆時五人團員將結合陶笛、吉他、鋼琴、提琴、木箱鼓、以及幻術視覺表演等，為在地親子家庭帶來宮崎駿的美妙音樂。<a href="./events_archive/event1.html">...點我看詳細內容</a></p>
+                                        <p class="card-text">{{ item.description }}<a href="{{ item.url }}">...點我看詳細內容</a></p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card">
-                                <div class="card-header" role="tab" style="padding-bottom:0;min-height:109px;">
-                                    <h5 class="mb-0" style="height:128px;margin-top:-20px;"><a data-toggle="collapse" aria-expanded="false" aria-controls="accordion-1 .item-2" href="div#accordion-1 .item-2"><br><div><div class="d-table-cell"><p style="width:54px;height:26px;font-size:14px;margin-top:11px;/*.event_month {&nbsp; padding:0.1em;*/margin-bottom:0.15em;background:#C00000;font-size:0.75em;color:white;border-top-left-radius:0.3em;border-top-right-radius:0.3em;text-align:center;">七月</p><p style="width:54px;margin-bottom:0px;border:1px solid #999;background:white;color:black;font-size:1.25em;font-weight:bold;border-bottom-left-radius:0.1em;border-bottom-right-radius:0.1em;text-align:center;">18</p></div><div class="d-table-cell" style="padding-bottom:0px;"><h4 style="padding-left:15px;"><strong>USR「魔幻音樂節」</strong></h4><p style="height:0;font-size:18px;padding-left:15px;"><i class="fa fa-clock-o" style="margin-right:0.8em;"></i>16:00-17:00</p></div></div></a></h5>
-                                </div>
-                                <div class="collapse item-2" role="tabpanel" data-parent="#accordion-1">
-                                    <div class="card-body">
-                                        <p class="card-text">「巧樂團」演出，屆時五人團員將結合陶笛、吉他、鋼琴、提琴、木箱鼓、以及幻術視覺表演等，為在地親子家庭帶來宮崎駿的美妙音樂。<a href="./events_archive/event1.html">...點我看詳細內容</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" role="tab" style="padding-bottom:0;min-height:109px;">
-                                    <h5 class="mb-0" style="height:128px;margin-top:-20px;"><a data-toggle="collapse" aria-expanded="false" aria-controls="accordion-1 .item-3" href="div#accordion-1 .item-3"><br><div><div class="d-table-cell"><p style="width:54px;height:26px;font-size:14px;margin-top:11px;/*.event_month {&nbsp; padding:0.1em;*/margin-bottom:0.15em;background:#C00000;font-size:0.75em;color:white;border-top-left-radius:0.3em;border-top-right-radius:0.3em;text-align:center;">七月</p><p style="width:54px;margin-bottom:0px;border:1px solid #999;background:white;color:black;font-size:1.25em;font-weight:bold;border-bottom-left-radius:0.1em;border-bottom-right-radius:0.1em;text-align:center;">18</p></div><div class="d-table-cell" style="padding-bottom:0px;"><h4 style="padding-left:15px;"><strong>USR「魔幻音樂節」</strong></h4><p style="height:0;font-size:18px;padding-left:15px;"><i class="fa fa-clock-o" style="margin-right:0.8em;"></i>16:00-17:00</p></div></div></a></h5>
-                                </div>
-                                <div class="collapse item-3" role="tabpanel" data-parent="#accordion-1">
-                                    <div class="card-body">
-                                        <p class="card-text">「巧樂團」演出，屆時五人團員將結合陶笛、吉他、鋼琴、提琴、木箱鼓、以及幻術視覺表演等，為在地親子家庭帶來宮崎駿的美妙音樂。<a href="./events_archive/event1.html">...點我看詳細內容</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" role="tab" style="padding-bottom:0;min-height:109px;">
-                                    <h5 class="mb-0" style="height:128px;margin-top:-20px;"><a data-toggle="collapse" aria-expanded="false" aria-controls="accordion-1 .item-4" href="div#accordion-1 .item-4"><br><div><div class="d-table-cell"><p style="width:54px;height:26px;font-size:14px;margin-top:11px;/*.event_month {&nbsp; padding:0.1em;*/margin-bottom:0.15em;background:#C00000;font-size:0.75em;color:white;border-top-left-radius:0.3em;border-top-right-radius:0.3em;text-align:center;">七月</p><p style="width:54px;margin-bottom:0px;border:1px solid #999;background:white;color:black;font-size:1.25em;font-weight:bold;border-bottom-left-radius:0.1em;border-bottom-right-radius:0.1em;text-align:center;">18</p></div><div class="d-table-cell" style="padding-bottom:0px;"><h4 style="padding-left:15px;"><strong>USR「魔幻音樂節」</strong></h4><p style="height:0;font-size:18px;padding-left:15px;"><i class="fa fa-clock-o" style="margin-right:0.8em;"></i>16:00-17:00</p></div></div></a></h5>
-                                </div>
-                                <div class="collapse item-4" role="tabpanel" data-parent="#accordion-1">
-                                    <div class="card-body">
-                                        <p class="card-text">「巧樂團」演出，屆時五人團員將結合陶笛、吉他、鋼琴、提琴、木箱鼓、以及幻術視覺表演等，為在地親子家庭帶來宮崎駿的美妙音樂。<a href="./events_archive/event1.html">...點我看詳細內容</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" role="tab" style="padding-bottom:0;min-height:109px;">
-                                    <h5 class="mb-0" style="height:128px;margin-top:-20px;"><a data-toggle="collapse" aria-expanded="false" aria-controls="accordion-1 .item-5" href="div#accordion-1 .item-5"><br><div><div class="d-table-cell"><p style="width:54px;height:26px;font-size:14px;margin-top:11px;/*.event_month {&nbsp; padding:0.1em;*/margin-bottom:0.15em;background:#C00000;font-size:0.75em;color:white;border-top-left-radius:0.3em;border-top-right-radius:0.3em;text-align:center;">七月</p><p style="width:54px;margin-bottom:0px;border:1px solid #999;background:white;color:black;font-size:1.25em;font-weight:bold;border-bottom-left-radius:0.1em;border-bottom-right-radius:0.1em;text-align:center;">18</p></div><div class="d-table-cell" style="padding-bottom:0px;"><h4 style="padding-left:15px;"><strong>USR「魔幻音樂節」</strong></h4><p style="height:0;font-size:18px;padding-left:15px;"><i class="fa fa-clock-o" style="margin-right:0.8em;"></i>16:00-17:00</p></div></div></a></h5>
-                                </div>
-                                <div class="collapse item-5" role="tabpanel" data-parent="#accordion-1">
-                                    <div class="card-body">
-                                        <p class="card-text">「巧樂團」演出，屆時五人團員將結合陶笛、吉他、鋼琴、提琴、木箱鼓、以及幻術視覺表演等，為在地親子家庭帶來宮崎駿的美妙音樂。<a href="./events_archive/event1.html">...點我看詳細內容</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" role="tab" style="padding-bottom:0;min-height:109px;">
-                                    <h5 class="mb-0" style="height:128px;margin-top:-20px;"><a data-toggle="collapse" aria-expanded="false" aria-controls="accordion-1 .item-6" href="div#accordion-1 .item-6"><br><div><div class="d-table-cell"><p style="width:54px;height:26px;font-size:14px;margin-top:11px;/*.event_month {&nbsp; padding:0.1em;*/margin-bottom:0.15em;background:#C00000;font-size:0.75em;color:white;border-top-left-radius:0.3em;border-top-right-radius:0.3em;text-align:center;">七月</p><p style="width:54px;margin-bottom:0px;border:1px solid #999;background:white;color:black;font-size:1.25em;font-weight:bold;border-bottom-left-radius:0.1em;border-bottom-right-radius:0.1em;text-align:center;">18</p></div><div class="d-table-cell" style="padding-bottom:0px;"><h4 style="padding-left:15px;"><strong>USR「魔幻音樂節」</strong></h4><p style="height:0;font-size:18px;padding-left:15px;"><i class="fa fa-clock-o" style="margin-right:0.8em;"></i>16:00-17:00</p></div></div></a></h5>
-                                </div>
-                                <div class="collapse item-6" role="tabpanel" data-parent="#accordion-1">
-                                    <div class="card-body">
-                                        <p class="card-text">「巧樂團」演出，屆時五人團員將結合陶笛、吉他、鋼琴、提琴、木箱鼓、以及幻術視覺表演等，為在地親子家庭帶來宮崎駿的美妙音樂。<a href="./events_archive/event1.html">...點我看詳細內容</a></p>
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
-        
+
+
             <!--       facebook message us plugin             -->
                     <!-- Your customer chat code -->
                     <div class="fb-customerchat" attribution=setup_tool page_id="591557164528575" theme_color="#172430" logged_in_greeting="您好！歡迎您與我們聯繫＝）" logged_out_greeting="您好！歡迎您與我們聯繫＝）">
                     </div>
     </main>
-    <footer class="page-footer dark">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h5 style="color:rgb(255,255,255);">了解更多</h5>
-                    <ul>
-                        <li style="color:#ffffff;">關於我們</li>
-                        <li style="color:rgb(248,255,255);">常見問題</li>
-                        <li><a href="./privacypolicy.html">隱私政策</a></li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <h5 style="color:rgb(255,255,255);">聯絡我們</h5>
-                    <ul>
-                        <li style="color:#ffffff;"><a href="mailto:usrsocntpu@gm.ntpu.edu.tw">usrsocntpu@gm.ntpu.edu.tw</a></li>
-                        <li style="color:rgb(248,255,255);">02-8674-1111 # 67030</li>
-                        <li><a href="https://goo.gl/maps/C3BnbFrgGRo">新北市三峽區大學路151號</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5 style="color:rgb(255,255,255);">活動訊息不漏接</h5>
-                    <form action="#"><input class="form-control" type="email" placeholder="Email address"></form>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <p>© Copyright 2018 by E.MajorTaiwan All Rights Reserved.</p>
-        </div>	<div class="modal fade" id="myModal">
-		<div class="modal-dialog">
-			<div class="modal-content bmd-modalContent">
-
-				<div class="modal-body">
-          
-          <div class="close-button">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          </div>
-          <div class="embed-responsive embed-responsive-16by9">
-					            <iframe class="embed-responsive-item" frameborder="0"></iframe>
-          </div>
-				</div>
-
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
- </footer>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="assets/js/theme.js"></script>
-    <script src="assets/js/footer_updating.js"></script>
-    <script src="assets/js/mapmodal.js"></script>
-</body>
-
-</html>

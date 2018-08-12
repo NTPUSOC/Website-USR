@@ -1,0 +1,57 @@
+---
+layout: default
+---
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/zh_TW/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="box-shadow: 0px 0px 8px 1px #929292">
+        <div class="container"><a class="navbar-brand" href="index.html" style="font-size:24px;">社會責任實踐平台</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-2">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/index.html">首頁</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/news.html">精彩花絮</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="/events.html">活動/徵才</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/institutes.html">相關機構</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="https://www.facebook.com/usr.ntpu" target="_blank" style="font-size:24px;height:40px;margin-top:-6px;"><i class="icon ion-social-facebook"></i></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="mailto:usrsocntpu@gm.ntpu.edu.tw" style="font-size:24px;height:40px;margin-top:-6px;"><i class="icon ion-ios-email-outline"></i></a></li>
+                </ul>
+              </div>
+        </div>
+    </nav>
+    <main class="page icon-distance" style="background-color:rgb(246,246,246);">
+        <div class="container clean-block clean-post dark" style="padding-top:26px;margin-bottom:-3px;">
+            <div class="row">
+                <div class="col" style="position:relative;height:auto;">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item"><a class="nav-link" href="/events.html" style="height:49px;margin-top:3px;color:rgb(73,80,87);">近期活動</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/forthcomingevents.html" style="color:rgb(73,80,87);height:52px;">活動列表<div class="d-inline"><span class="badge badge-primary badge-article-number">5</span></div></a></li>
+                        <li class="nav-item"><a class="nav-link" href="/jobs.html" style="height:49px;color:rgb(73,80,87);">徵才<span class="badge badge-primary badge-article-number">0</span></a></li>
+                    </ul>
+                    <div class="posts-box2 u-padding-b-0" style="height:auto;margin:0px;margin-bottom:-29px;padding:24px;padding-bottom:9px;background-color:white;margin-left:0px;padding-top:25px;padding-left:45px;">
+                        <h1><strong>{{ page.jobtitle }}</strong></h1>
+                        <h6 class="text-muted mb-2" style="padding-bottom:15px;"><i class="fa fa-map-marker" style="padding:3px;"></i>{{ page.address }}</h6>
+                        <p class="card-text" style="margin:0px 0px 10px;padding-bottom:10px;"><i class="fa fa-dollar"></i>工作待遇：<br>{{ page.salary }}<br></p>
+                        <p class="card-text" style="margin:0px 0px 10px;padding-bottom:10px;"><i class="fa fa-bars"></i>工作內容：<br>{{ page.jobcontent }}<br></p>
+                        <p class="card-text" style="margin:0px 0px 10px;padding-bottom:10px;"><i class="fa fa-bars"></i>工作期程：<br>{{ page.period }}<br></p>
+                        <p class="card-text" style="margin:0px 0px 10px;padding-bottom:10px;"><i class="fa fa-bars"></i>申請資格：<br>{{ page.qualifications }}<br></p>
+                        <p
+                            class="card-text" style="margin:0px 0px 10px;padding-bottom:10px;"><i class="fa fa-bars"></i>申請資料：<br>{{ page.document }}<br></p>
+                            <p class="card-text" style="margin:0px 0px 10px;padding-bottom:10px;"><i class="fa fa-bars"></i>申請方式：<br>{{ page.method }}<br></p>
+                            <p class="card-text" style="margin:0px 0px 10px;padding-bottom:10px;"><i class="fa fa-bars"></i>{{ page.other }}<br></p>
+                            <p class="card-text" style="margin:0px 0px 10px;padding-bottom:10px;"><i class="fa fa-bars"></i>收件截止：<br>{{ page.deadline }}<br></p>
+                            <p class="card-text" style="margin:0px 0px 10px;padding-bottom:10px;">聯絡人：{{ page.contact }}<br></p>
+                    </div>
+                </div>
+                <div class="col-lg-3 d-none d-sm-none d-md-none d-lg-block">
+                  {% include eventsidebar.html %}
+                </div>
+            </div>
+        </div>
+    </main>

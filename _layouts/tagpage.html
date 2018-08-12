@@ -24,70 +24,24 @@ title: 精彩回顧
                 <div class="col-lg-8 col-xl-9 content-wrapper" style="position:relative;background-color:transparent;">
                     <ul class="nav nav-tabs" style="margin-left:0px;">
                         <li class="nav-item"><a class="nav-link" href="{{'/news.html'| relative_url }}" style="height:53px;margin-top:3px;color:rgb(73,80,87);">近期消息</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="{{ '/newsarchive/index.html'| relative_url }}" style="color:rgb(73,80,87);height:53px;margin-top:3px;">精彩回顧</a></li>
+                        <li class="nav-item"><a class="nav-link " href="{{ '/newsarchive/index.html'| relative_url }}" style="color:rgb(73,80,87);height:53px;margin-top:3px;">精彩回顧</a></li>
                     </ul>
                     <div data-sticky_column="" style="background-color:white;">
                         <div class="posts-box2 u-padding-b-0">
                             <div class="posts-box2__top">
-                                <h3><span>文章列表</span></h3>
+                                <h3><span>主題標籤: {{ page.tag }}</span></h3>
                             </div>
                         </div>
                         <div class="posts-box2 u-padding-b-0">
-                            <p style="margin:0px 0px 15px;padding:12px 30px;">2018.07.14 更新</p>
+
 
   <!-- This loops through the paginated posts -->
   <ul class="list-group" style="margin:15px 0px 13px;padding:0px 25px;">
-      {% for post in paginator.posts %}
+      {% for post in site.tags[page.tag] %}
+
       <li class="list-group-item"><span style="color:#212529; margin-right: 5px;">{{ post.date | date: "%Y-%m-%d" }}</span><a href="{{ post.url | relative_url }}"><strong>{{ post.subtitle }}</strong></a></li>
       {% endfor %}
   </ul>
-
-
-  {% if paginator.total_pages > 1 %}
-  <nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
-
-      <!--Previous pagination-->
-        {% if paginator.previous_page %}
-        <li class="page-item">
-          <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" tabindex="-1">«</a>
-        </li>
-        {% else %}
-        <li class="page-item disabled">
-          <span class="page-link">«</span>
-        </li>
-        {% endif %}
-
-      <!--numbered pagination-->
-    {% for page in (1..paginator.total_pages) %}
-
-        {% if page == paginator.page %}
-        <li class="page-item disabled">
-          <em class="page-link" style="color: black;">{{ page }}</em>
-        </li>
-        {% elsif page == 1 %}
-        <li class="page-item">
-          <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
-        </li>
-        {% else %}
-        <li class="page-item">
-          <a class="page-link" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-        </li>
-        {% endif %}
-    {% endfor %}
-
-      <!--pagination next-->
-      <li class="page-item">
-        {% if paginator.next_page %}
-          <a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">»</a>
-        {% else %}
-          <span class="page-link">»</span>
-        {% endif %}
-      </li>
-
-    </ul>
-  </nav>
-  {% endif %}
 
 </div>
                     </div>

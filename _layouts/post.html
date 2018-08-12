@@ -52,7 +52,13 @@ layout: default
                         {% include articlelikeshare.html %}
 
                         <article class="article-comment" style="margin-top:17px; font-size: 17px;">
-                            {{ page.subtitle }}
+                          {% for tag in page.tags %}
+                            {% capture tag_name %}{{ tag }}{% endcapture %}
+                            <a href="{{ site.baseurl }}/tag/{{ tag_name }}">
+                              <button class="btn btn-primary btn-small btn-tagCloud" type="button" style="padding: 2px">{{ tag_name }}
+                              </button>
+                            </a>
+                          {% endfor %}
                             <br><br>
                             {{ content }}
                             <br>

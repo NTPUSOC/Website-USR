@@ -6,10 +6,6 @@ permalink: events.html
 
 {% assign firstpage = site.events.first %}
 
-
-{% comment %} activeclass = ""表示「近期活動」tab不會選，= "active" 表示會選 {% endcomment %}
-{% assign activeclass = "active" %}
-
 <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
 
 <!--messeage us plugin-->
@@ -36,6 +32,10 @@ permalink: events.html
 
                     {% include socialplugin.html %}
                     {% include eventlistingtab.html %}
+
+                    <script>
+                      document.getElementById("newevent").classList.add("active")
+                    </script>
 
                     <div class="posts-box2 u-padding-b-0" style="height:auto;margin-bottom:-29px;padding-bottom:9px;background-color:white;">
                         <div class="row" style="margin-left:-9px;margin-bottom:28px;">

@@ -12,21 +12,11 @@ permalink: news.html
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<nav class="navbar navbar-light navbar-expand-md navigation-clean" style="box-shadow: 0px 0px 8px 1px #929292">
-    <div class="container"><a class="navbar-brand" href="index.html" style="font-size:24px;">社會責任實踐平台</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-        <div
-            class="collapse navbar-collapse" id="navcol-2">
-            <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">首頁</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link active" href="news.html">精彩花絮</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="events.html">活動/徵才</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="institutes.html">相關機構</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="https://www.facebook.com/usr.ntpu" target="_blank" style="font-size:24px;height:40px;margin-top:-6px;"><i class="icon ion-social-facebook"></i></a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="mailto:usrsocntpu@gm.ntpu.edu.tw" target="_blank" style="font-size:24px;height:40px;margin-top:-6px;"><i class="icon ion-ios-email-outline"></i></a></li>
-            </ul>
-    </div>
-    </div>
-</nav>
+{% include nav.html %}
+
+    <script>
+      document.getElementById("news").classList.add("active")
+    </script>
     <main class="page" style="background-color:rgb(246,246,246);">
         <div class="container clean-block clean-post dark" style="padding-top:26px;">
             <div class="row" data-sticky_parent="" style="position: relative;">
@@ -44,7 +34,7 @@ permalink: news.html
                             {% assign firstpage = site.posts.first %}
 
                             <div class="posts-list-big-first row">
-                                <a href="{{ firstpage.url }}">
+                                <a href="{{ firstpage.url | relative_url }}">
                                     <div id="flex-newpost" class="d-flex flex-wrap flex-md-nowrap bd-highlight" style="padding-right:15px;padding-left:15px;">
                                         <div class="p-2 flex-fill bd-highligh"><img src="{{ firstpage.thumbnail }}"></div>
                                         <div class="p-2 flex-fill bd-highligh">
@@ -65,12 +55,12 @@ permalink: news.html
 
                                 <article class="col-sm-6 col-xl-4">
                                     <div class="post-item">
-                                        <figure class="figure"><a href="{{ item.url }}"><img class="img-fluid" src="{{ item.firstImg }}"></a></figure>
+                                        <figure class="figure"><a href="{{ item.url | relative_url }}"><img class="img-fluid" src="{{ item.firstImg }}"></a></figure>
                                         <div class="post-content">
                                             <div class="post-meta">
-                                                <p class="post-time">{{ item.date | date: "%Y-%m-%d" }}<a href="{{ item.url }}"><span class="badge badge-primary badge-label">{{ item.tag }}</span></a></p>
+                                                <p class="post-time">{{ item.date | date: "%Y-%m-%d" }}<a href="{{ item.url | relative_url }}"><span class="badge badge-primary badge-label">{{ item.tag }}</span></a></p>
                                             </div>
-                                            <h5><a href="{{ item.url }}"><strong>{{ item.subtitle }}</strong><br></a></h5>
+                                            <h5><a href="{{ item.url | relative_url }}"><strong>{{ item.subtitle }}</strong><br></a></h5>
                                             <p class="post-excerpt">{{ item.description }}...<br></p>
                                         </div>
                                     </div>

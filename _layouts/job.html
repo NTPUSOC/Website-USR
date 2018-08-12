@@ -29,11 +29,8 @@ layout: default
         <div class="container clean-block clean-post dark" style="padding-top:26px;margin-bottom:-3px;">
             <div class="row">
                 <div class="col" style="position:relative;height:auto;">
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item"><a class="nav-link" href="/events.html" style="height:49px;margin-top:3px;color:rgb(73,80,87);">近期活動</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/forthcomingevents.html" style="color:rgb(73,80,87);height:52px;">活動列表<div class="d-inline"><span class="badge badge-primary badge-article-number">5</span></div></a></li>
-                        <li class="nav-item"><a class="nav-link" href="/jobs.html" style="height:49px;color:rgb(73,80,87);">徵才<span class="badge badge-primary badge-article-number">0</span></a></li>
-                    </ul>
+                    {% include eventlistingtab.html %}
+
                     <div class="posts-box2 u-padding-b-0" style="height:auto;margin:0px;margin-bottom:-29px;padding:24px;padding-bottom:9px;background-color:white;margin-left:0px;padding-top:25px;padding-left:45px;">
                         <h1><strong>{{ page.jobtitle }}</strong></h1>
                         <h6 class="text-muted mb-2" style="padding-bottom:15px;"><i class="fa fa-map-marker" style="padding:3px;"></i>{{ page.address }}</h6>

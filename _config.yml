@@ -2,7 +2,9 @@ collections:
   events:
     output: true
   posters:
-  institutions: 
+  institutions:
+  jobs:
+    output: true
 title: Your awesome title
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"

@@ -31,6 +31,14 @@ permalink: events.html
                 <div class="col" style="position:relative;height:auto;">
 
                     {% include socialplugin.html %}
+
+                    <script>
+                      document.getElementById("fbshare").setAttribute('href', "https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ firstpage.url | prepend:site.baseurl }}&amp;src=sdkpreparse")
+                      document.getElementById("fbshare2").setAttribute('href', "https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ firstpage.url | prepend:site.baseurl }}&amp;src=sdkpreparse")
+
+                    </script>
+
+
                     {% include eventlistingtab.html %}
 
                     <script>

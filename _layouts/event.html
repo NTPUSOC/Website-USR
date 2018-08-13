@@ -26,9 +26,8 @@ layout: default
 
                     {% include socialplugin.html %}
                     <script>
-                      document.getElementById("fbshare").setAttribute('href', "https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}&amp;src=sdkpreparse")
-                      document.getElementById("fbshare2").setAttribute('href', "https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}&&amp;src=sdkpreparse")
-
+                      document.getElementById("fbshare").setAttribute('href', "https://www.facebook.com/sharer/sharer.php?u={{ site.url | replace: '://','%3A%2F%2F' }}{{ page.url  | replace: '/','%2F'  v }}&amp;src=sdkpreparse")
+                      document.getElementById("fbshare2").setAttribute('href', "https://www.facebook.com/sharer/sharer.php?u={{ site.url  | replace: '://','%3A%2F%2F' }}{{ page.url  | replace: '/','%2F'  }}&&amp;src=sdkpreparse")
                     </script>
 
                     {% include eventlistingtab.html %}

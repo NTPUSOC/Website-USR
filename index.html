@@ -23,7 +23,7 @@ permalink: index.html
                 <div class="row">
                     <div class="col">
                       {% assign firstpage = site.posts.first %}
-                        <a href="{{ firstpage.url | relative_url }}">
+                        <a href="{{ firstpage.url }}">
                             <article>
                                 <div class="post-item">
                                     <figure class="figure"><img class="img-fluid figure-img" src="{{ firstpage.thumbnail }}"></figure>
@@ -95,7 +95,7 @@ permalink: index.html
 
                                 <div class="collapse item-{{ itemNumber }}" role="tabpanel" data-parent="#accordion-1">
                                     <div class="card-body">
-                                        <p class="card-text">{{ item.description }}<a href="{{ item.url | relative_url }}">...點我看詳細內容</a></p>
+                                        <p class="card-text">{{ item.description }}<a href="{{ item.url }}">...點我看詳細內容</a></p>
                                     </div>
                                 </div>
                             </div>

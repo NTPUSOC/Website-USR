@@ -1,5 +1,19 @@
 <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="box-shadow: 0px 0px 8px 1px #929292">
-    <div class="container"><a class="navbar-brand" href="index.html" style="font-size:24px;">社會責任實踐平台</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+    <div class="container">
+      <!--
+      <a class="navbar-brand" href="index.html" style="font-size:16px;"><span>{{ site.institution }}<br>{{ site.project }}</span>
+      </a>
+    -->
+      <a href="index.html" class="navbar-brand d-flex flex-shrink-1 flex-wrap" style="font-size:18px;">
+        <span style="margin-right:8px;">
+          <strong>{{ site.institution }}</strong>
+        </span>
+        <span>
+          <strong>{{ site.project }}</strong>
+        </span>
+      </a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-2">
+        <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div
             class="collapse navbar-collapse" id="navcol-2">
             <ul class="nav navbar-nav ml-auto">

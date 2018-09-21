@@ -5,4 +5,5 @@ _site/
 *.lock
 Gemfile.lock
 .DS_Store
+.Rhistory
 .Rproj.user

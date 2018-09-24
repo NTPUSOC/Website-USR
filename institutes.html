@@ -16,11 +16,21 @@ permalink: institutes.html
 
                   {% for itemInstitution in site.institutions %}
                   <div class="col-sm-6 col-lg-4">
-                      <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="{{ itemInstitution.imagesrc }}">
+                      <div class="card clean-card text-center" style="margin-top:20px; "><img class="card-img-top w-100 d-block" src="{{ itemInstitution.imagesrc }}">
                           <div class="card-body info">
                               <h4 class="card-title">{{ itemInstitution.name }}</h4>
                               <p class="card-text">{{ itemInstitution.description }}</p>
-                              <div class="icons"><a href="{{- itemInstitution.facebookurl -}}"><i class="icon-social-facebook"></i></a><a href="{{- itemInstitution.officialurl -}}"><i class="icon-globe"></i></a><a href="mailto:{{- itemInstitution.email -}}"><i class="icon-envelope"></i></a></div>
+                              <div class="icons">
+                                {% if itemInstitution.facebookurl %}
+                                  <a href="{{- itemInstitution.facebookurl -}}" target="_blank"><i class="icon-social-facebook"></i></a>
+                                {% endif %}
+                                {% if itemInstitution.officialurl  %}
+                                  <a href="{{- itemInstitution.officialurl -}}" target="_blank"><i class="icon-globe"></i></a>
+                                {% endif %}
+                                {% if itemInstitution.email %}
+                                  <a href="mailto:{{- itemInstitution.email -}}"><i class="icon-envelope"></i></a>
+                                {% endif %}
+                              </div>
                           </div>
                       </div>
                   </div>

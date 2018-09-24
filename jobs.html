@@ -30,7 +30,18 @@ permalink: jobs.html
 
                     <div class="posts-box2 u-padding-b-0" style="height:auto;margin-bottom:-29px;padding-bottom:9px;background-color:white;min-height:480px;/*width:825px;*/">
                         <div role="tablist" id="accordion-1" class="icon-distance" style="margin:0px 23px;padding:23px;">
+
+                          {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
+                          {% assign nowunix = nowunix | plus: 0 %}
+
+
                           {% for item in site.jobs %}
+
+                          {% capture posttime %}{{item.expirationDate | date: '%s'}}{% endcapture %}
+                          {% assign posttime = posttime | plus: 0 %}
+
+                          {% if posttime >= nowunix %}
+
                             {% capture _ %}{% increment _myCountjob %}{% endcapture %}
                             {% assign itemNumber = _myCountjob | plus: 1 %}
                             <div class="card">
@@ -56,6 +67,7 @@ permalink: jobs.html
                                         <p class="card-text" style="margin:0;"><i class="fa fa-bars"></i>工作內容：<br>{{ item.jobcontent}}<br></p><a href="{{ item.url | relative_url }}">詳細內容</a></div>
                                 </div>
                             </div>
+                            {% endif %}
                             {% endfor %}
                         </div>
                     </div>

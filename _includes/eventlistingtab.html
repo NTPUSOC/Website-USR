@@ -1,5 +1,26 @@
+{% capture now %}{{'now' | date: '%s' | plus: 0 }}{% endcapture %}
+
+{% assign count = 0 %}
+{% for post in site.events %}
+  {% capture date %}{{ post.date | date: '%s' | plus: 0 }}{% endcapture %}
+  {% if date > now %}
+    <!-- post content here -->
+    {% assign count = count | plus: 1 %}
+  {% endif %}
+{% endfor %}
+
+
+{% assign count2 = 0 %}
+{% for post in site.jobs %}
+  {% capture date %}{{ post.expirationDate | date: '%s' | plus: 0 }}{% endcapture %}
+  {% if date > now %}
+    <!-- post content here -->
+    {% assign count2 = count2 | plus: 1 %}
+  {% endif %}
+{% endfor %}
+
 <ul class="nav nav-tabs">
     <li class="nav-item"><a id="newevent" class="nav-link" href="{{'/events.html'| relative_url }}" style="height:49px;margin-top:3px;color:rgb(73,80,87);">近期活動</a></li>
-    <li class="nav-item"><a id="eventlist" class="nav-link" href="{{'/forthcomingevents.html'| relative_url }}" style="color:rgb(73,80,87);height:52px;">活動列表<div class="d-inline"><span class="badge badge-primary badge-article-number">{{ site.events | size }}</span></div></a></li>
-    <li class="nav-item"><a id="joblist" class="nav-link" href="{{'/jobs.html'| relative_url }}" style="height:52px;color:rgb(73,80,87);">徵才<span class="badge badge-primary badge-article-number">{{ site.jobs | size }}</span></a></li>
+    <li class="nav-item"><a id="eventlist" class="nav-link" href="{{'/forthcomingevents.html'| relative_url }}" style="color:rgb(73,80,87);height:52px;">活動列表<div class="d-inline"><span  class="badge badge-primary badge-article-number">{{ count }}</span></div></a></li>
+    <li class="nav-item"><a id="joblist" class="nav-link" href="{{'/jobs.html'| relative_url }}" style="height:52px;color:rgb(73,80,87);">徵才<span class="badge badge-primary badge-article-number">{{ count2 }}</span></a></li>
 </ul>

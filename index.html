@@ -41,24 +41,36 @@ permalink: index.html
                     <div class="col-lg-4">
                         <div class="carousel slide" data-ride="carousel" id="carousel-1" style="min-height:500px;">
                             <div class="carousel-inner" role="listbox">
-                              {% for itemPoster in site.posters %}
-                                {% capture _ %}{% increment _myCount2 %}{% endcapture %}
-                                {% assign itemNumber = _myCount2 | plus: 1 %}
-                                {% if itemNumber <= 2 %}
+                              {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
+                              {% assign nowunix = nowunix | plus: 0 %}
 
-                                  <div class="carousel-item active">
+                              {% for itemPoster in site.posters %}
+
+                                {% capture posttime %}{{itemPoster.date | date: '%s'}}{% endcapture %}
+                                {% assign posttime = posttime | plus: 0 %}
+
+                                {% if posttime >= nowunix %}
+
+
+                                  {% capture _ %}{% increment _myCount2 %}{% endcapture %}
+                                  {% assign itemNumber = _myCount2 | plus: 1 %}
+                                  {% if itemNumber <= 2 %}
+
+                                    <div class="carousel-item active">
+                                      <a href="{{ itemPoster.eventurl }}">
+                                      <img class="w-100 d-block" src="{{ itemPoster.imagesrc }}" alt="Slide Image" height="100%"></a>
+                                    </div>
+
+                                  {% else %}
+
+                                  <div class="carousel-item">
                                     <a href="{{ itemPoster.eventurl }}">
                                     <img class="w-100 d-block" src="{{ itemPoster.imagesrc }}" alt="Slide Image" height="100%"></a>
                                   </div>
 
-                                {% else %}
+                                  {% endif %}
 
-                                <div class="carousel-item">
-                                  <a href="{{ itemPoster.eventurl }}">
-                                  <img class="w-100 d-block" src="{{ itemPoster.imagesrc }}" alt="Slide Image" height="100%"></a>
-                                </div>
-
-                                {% endif %}
+                              {% endif %}
                               {% endfor %}
                             </div>
                             <div>

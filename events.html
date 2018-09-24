@@ -4,7 +4,15 @@ title: 近期活動
 permalink: events.html
 ---
 
-{% assign firstpage_event = site.events.first %}
+{% capture now %}{{'now' | date: '%s' | plus: 0 }}{% endcapture %}
+{% for post in site.events %}
+  {% capture date %}{{ post.date | date: '%s' | plus: 0 }}{% endcapture %}
+  {% if date > now %}
+    <!-- post content here -->
+    {% assign firstpage_event = post %}
+  {% break %}
+  {% endif %}
+{% endfor %}
 
 <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
 

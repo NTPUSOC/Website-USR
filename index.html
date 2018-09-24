@@ -96,7 +96,16 @@ permalink: index.html
                     <!--近期活動-->
                     <div class="col">
                         <div role="tablist" id="accordion-1" style="overflow-y:scroll;margin-left:10px;max-height:500px;">
+                          {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
+                          {% assign nowunix = nowunix | plus: 0 %}
+
                           {% for item in site.events %}
+
+                          {% capture posttime %}{{item.date | date: '%s'}}{% endcapture %}
+                          {% assign posttime = posttime | plus: 0 %}
+
+                          {% if posttime >= nowunix %}
+
                             {% capture _ %}{% increment _myCount3 %}{% endcapture %}
                             {% assign itemNumber = _myCount3 | plus: 1 %}
                             <div class="card">
@@ -111,6 +120,7 @@ permalink: index.html
                                     </div>
                                 </div>
                             </div>
+                            {% endif %}
                             {% endfor %}
                         </div>
                     </div>

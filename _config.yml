@@ -39,5 +39,5 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-paginate: 15
+paginate: 25
 paginate_path: "/newsarchive/page:num/"

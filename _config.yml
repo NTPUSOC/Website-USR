@@ -6,9 +6,9 @@ collections:
   jobs:
     output: true
 future: true
-title: 國立臺北大學社科院大學社會責任實踐計畫平台
+title: 國立臺北大學社科院大學社會責任平台
 institution: 國立臺北大學社科院
-project: 社會責任實踐計畫平台
+project: 社會實踐平台
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this

@@ -40,8 +40,8 @@ layout: default
                                 {% for item in page.otherImg %}
                                 <div class="carousel-item"><img class="w-100 d-block" src="{{ item.src }} "alt="Slide Image"></div>
                                 {% endfor %}
-                                {% if page.video %}
-                                  {% for vitem in page.video %}
+                                {% if page.youtube %}
+                                  {% for vitem in page.youtube %}
                                     <div class="carousel-item">
                                       <div class="resp-container">
                                           <iframe class="resp-iframe" src="https://www.youtube.com/embed/{{ vitem.src }}" gesture="media"  allow="encrypted-media" allowfullscreen></iframe>
@@ -59,8 +59,8 @@ layout: default
                                 {%- for i in (1..page.otherImg.size) -%}
                                 <li data-target="#carousel-1" data-slide-to="{{ i }}"></li>
                                 {% endfor %}
-                                {% if page.video %}
-                                  {% for j in (1..page.video.size) %}
+                                {% if page.youtube %}
+                                  {% for j in (1..page.youtube.size) %}
                                     <li data-target="#carousel-1" data-slide-to="{{ j | plus: 10 }}"></li>
                                   {% endfor %}
                                 {% endif %}
@@ -83,8 +83,8 @@ layout: default
                             {{ content }}
                             <br>
 
-                            {% if page.video %}
-                              {% for vitem in page.video %}
+                            {% if page.youtube %}
+                              {% for vitem in page.youtube %}
                                 <div class="resp-container">
                                     <iframe class="resp-iframe" src="https://www.youtube.com/embed/{{ vitem.src }}" gesture="media"  allow="encrypted-media" allowfullscreen></iframe>
                                 </div>

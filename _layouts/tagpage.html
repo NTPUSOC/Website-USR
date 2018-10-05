@@ -39,7 +39,14 @@ title: 精彩回顧
   <ul class="list-group" style="margin:15px 0px 13px;padding:0px 25px;">
       {% for post in site.tags[page.tag] %}
 
-      <li class="list-group-item"><span style="color:#212529; margin-right: 5px;">{{ post.date | date: "%Y-%m-%d" }}</span><a href="{{ post.url | relative_url }}"><strong>{{ post.subtitle }}</strong></a></li>
+      <li class="list-group-item"><span style="color:#212529; margin-right: 5px;">{{ post.date | date: "%Y-%m-%d" }}</span><a href="{{ post.url | relative_url }}">
+        <strong>
+          {% if post.subtitle  %}
+            {{ post.subtitle }}
+          {% else %}
+            {{ post.title }}
+          {% endif %}
+        </strong></a></li>
       {% endfor %}
   </ul>
 

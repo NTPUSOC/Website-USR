@@ -38,7 +38,14 @@ permalink: news.html
                                     <div id="flex-newpost" class="d-flex flex-wrap flex-md-nowrap bd-highlight" style="padding-right:15px;padding-left:15px;">
                                         <div class="p-2 flex-fill bd-highligh col-12 col-lg-5"><img src="{{ firstpage.thumbnail }}"></div>
                                         <div class="p-2 flex-fill bd-highligh col-12 col-lg-7">
-                                            <h5 style="margin-bottom:11px;"><strong>{{ firstpage.subtitle }}</strong><br></h5>
+                                            <h5 style="margin-bottom:11px;">
+                                              <strong>
+                                                {% if firstpage.subtitle  %}
+                                                  {{ firstpage.subtitle }}
+                                                {% else %}
+                                                  {{ firstpage.title }}
+                                                {% endif %}
+                                              </strong><br></h5>
                                             <p style="margin-bottom:5px;">{{ firstpage.description }}</p><span style="padding-left:3px;">{{ firstpage.date | date: "%Y-%m-%d" }}</span><span class="post-words">&nbsp; 更多內容...</span></div>
                                     </div>
                                 </a>
@@ -60,7 +67,14 @@ permalink: news.html
                                             <div class="post-meta">
                                                 <p class="post-time">{{ item.date | date: "%Y-%m-%d" }}<a href="{{ item.url | relative_url }}"><span class="badge badge-primary badge-label">{{ item.tag }}</span></a></p>
                                             </div>
-                                            <h5><a href="{{ item.url | relative_url }}"><strong>{{ item.subtitle }}</strong><br></a></h5>
+                                            <h5><a href="{{ item.url | relative_url }}">
+                                              <strong>
+                                                {% if item.subtitle  %}
+                                                  {{ item.subtitle }}
+                                                {% else %}
+                                                  {{ item.title }}
+                                                {% endif %}
+                                              </strong><br></a></h5>
                                             <p class="post-excerpt">{{ item.description }}...<br></p>
                                         </div>
                                     </div>

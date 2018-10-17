@@ -1,0 +1,35 @@
+
+## 產生推薦信Rmd
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message=FALSE)
+library(reticulate)
+use_condaenv("m-team")
+```
+
+```{r}
+source_python("USRweb-crawlerVV.py")
+```
+
+
+
+```{r}
+library(readr)
+Template<-read_lines("USRTemplate.md")
+library(stringr)
+library(dplyr)
+Template %>%
+  str_replace_all(
+    c(
+      "%images1%" = images1,
+      "%imgg%" = imgg,
+      "%vidd%" = vidd,
+      "%title%"=title,
+      "%des%"=des,
+      "%date%"=date,
+      "%tag%" = tag,
+      "%content%" = content
+    )
+  ) -> Template
+filePath<-paste0(date,"-",webid,"-ntpuusr.md")
+write_lines(Template,filePath)
+```

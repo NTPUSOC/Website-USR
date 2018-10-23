@@ -30,6 +30,6 @@ Template %>%
       "%content%" = content
     )
   ) -> Template
-filePath<-paste0(date,"-",webid,"-ntpuusr.md")
+filePath<-paste0("../_posts/",date,"-",webid,"-ntpuusr.md")
 write_lines(Template,filePath)
 ```

@@ -34,7 +34,7 @@ permalink: news.html
                             {% assign firstpage = site.posts.first %}
 
                             <div class="posts-list-big-first row">
-                                <a href="{{ firstpage.url | relative_url }}">
+                                <a id="latestnews" href="{{ firstpage.url | relative_url }}">
                                     <div id="flex-newpost" class="d-flex flex-wrap flex-md-nowrap bd-highlight" style="padding-right:15px;padding-left:15px;">
                                         <div class="p-2 flex-fill bd-highligh col-12 col-lg-5"><img src="{{ firstpage.thumbnail }}"></div>
                                         <div class="p-2 flex-fill bd-highligh col-12 col-lg-7">
